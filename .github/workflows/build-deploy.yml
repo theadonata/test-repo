@@ -1,8 +1,9 @@
-name: Build and Deploy
+name: Test - Build - Deploy
 
 on:
   push:
     branches: [ "main" ]
+
   workflow_dispatch:
 
 jobs:
@@ -25,11 +26,18 @@ jobs:
           npm install jest supertest
           npm test
   
-  # test-go:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Run test
-  #       run: npm test ./node-js
+  test-go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '^1.14.2'
+
+      - run: go version
   
   # build:
   #   runs-on: ubuntu-latest
