@@ -22,7 +22,7 @@ jobs:
     needs: [setup]
     steps:
       - name: Run test
-        working-directory: ./node-js
+        working-directory: node-js
         run: 
           npm install
           npm test 
