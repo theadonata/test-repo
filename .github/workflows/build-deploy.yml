@@ -1,12 +1,6 @@
 name: Build and Deploy
 
-on:
   workflow_dispatch:
-    inputs:
-      tag:
-        type: string
-        required: false
-        default: main
 
 jobs:
   setup:
