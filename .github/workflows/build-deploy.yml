@@ -25,8 +25,8 @@ jobs:
         # working-directory: node-js
         run: |
           ls
-          npm install
-          npm test
+          # npm install
+          # npm test
   
   # test-go:
   #   runs-on: ubuntu-latest
