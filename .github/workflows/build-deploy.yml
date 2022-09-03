@@ -21,6 +21,7 @@ jobs:
         working-directory: node-js
         run: |
           npm install
+          npm install -g jest
           npm test
   
   # test-go:
