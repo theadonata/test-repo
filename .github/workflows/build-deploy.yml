@@ -23,9 +23,10 @@ jobs:
     steps:
       - name: Run test
         working-directory: node-js
-        run: 
+        run: |
+          ls
           npm install
-          npm test 
+          npm test
   
   # test-go:
   #   runs-on: ubuntu-latest
