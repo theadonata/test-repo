@@ -4,7 +4,8 @@
   "description": "Simplest possible use of Node.js and Docker.",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src",
+    "test": "jest src/app.test.js",
     "docker:ls": "docker image ls",
     "docker:ps": "docker container ls",
     "docker:build": "docker build --file Dockerfile --tag=helloworld .",
