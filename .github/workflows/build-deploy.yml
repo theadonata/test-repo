@@ -44,7 +44,7 @@ jobs:
   
   build:
     runs-on: ubuntu-latest
-    needs: [test-node-js], [test-go]
+    needs: [test-node-js, test-go]
     steps:
       - name: Run test
         run: |
