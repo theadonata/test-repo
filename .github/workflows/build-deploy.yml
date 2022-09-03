@@ -57,14 +57,14 @@ jobs:
 
       - name: Build and push NodeJS Image
         uses: docker/build-push-action@v3
-        working-directory: node-js
         with:
+          context: ./node-js
           push: true
           tags: theadonata/test-node-js-image:1.0.0
 
       - name: Build and push Go Image
         uses: docker/build-push-action@v3
-        working-directory: go
         with:
+          context: ./go
           push: true
           tags: theadonata/test-go-image:1.0.0
