@@ -1,4 +1,4 @@
-name: Test Build Deploy
+name: Test - Build - Deploy
 
 on:
   push:
@@ -46,6 +46,25 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test-node-js, test-go]
     steps:
-      - name: Run test
-        run: |
-          println "Test Passed"
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push NodeJS Image
+        uses: docker/build-push-action@v3
+        working-directory: node-js
+        with:
+          push: true
+          tags: theadonata/test-node-js-image:1.0.0
+
+      - name: Build and push Go Image
+        uses: docker/build-push-action@v3
+        working-directory: go
+        with:
+          push: true
+          tags: theadonata/test-go-image:1.0.0
