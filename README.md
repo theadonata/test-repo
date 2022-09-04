@@ -13,13 +13,10 @@ Test all codes before build and push Go and NodeJS images to DockerHub. Build pr
 * Go v1.14.2
 * Node v16.13.1
 
-### Installing
+### Prerequisites
 
 * Put all your Go scripts in go folder
 * Put all your NodeJS scripts in node-js/src folder
-
-### Executing program
-
 * Set the repository secrets in Settings > Secrets > Actions
 * List of secrets
   | Name       |
@@ -30,8 +27,11 @@ Test all codes before build and push Go and NodeJS images to DockerHub. Build pr
   | EKS_REGION|
   | DOCKERHUB_USERNAME|
   | DOCKERHUB_TOKEN |
+
+### Usage
+
 * Deployment will be executed automatically if there is any changes pushed to **main** branch 
-* Deployment can be executed manually from **Actions** > **Test - Build - Deploy** > **Run Workflow**
+* Deployment can be executed manually from **Actions** > **Test - Build - Deploy** > **Run Workflow** 
   
   
 ## Acknowledgments
